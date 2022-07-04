@@ -1,0 +1,13 @@
+|.link {
+    margin: 1rem;
+    text-decoration: none;
+    color: #ddd;
+    padding: 0.5em 1em;
+    transition: 0.5s;
+    background-color: #222;
+    border-radius: 0.2em;
+}
+
+.link:hover {
+    color: #fb3;
+}
