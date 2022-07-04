@@ -1,0 +1,37 @@
+.logo {
+height: 100%;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #222;
+    height: 54px;
+}
+
+.list {
+    display: flex;
+    list-style: none;
+    height: 100%;
+}
+
+.item {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.item a {
+    color: #ddd;
+    text-decoration: none;
+    padding: 1rem 1rem 1rem 1rem;
+    font-size: 1rem;
+}
+
+.item a:hover {
+    color: #fb3;
+}
+
+.cls {
+    margin-top: 10px;
+}

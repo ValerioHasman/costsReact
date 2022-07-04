@@ -1,0 +1,29 @@
+.footer {
+    background-color: #222;
+    color: #ddd;
+    padding: 2rem;
+}
+
+.footer p {
+    display: flex;
+    justify-content: center;
+}
+
+.costs {
+    font-weight: bold;
+}
+
+.list {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+}
+
+.list li svg:hover {
+    color: #fb3;
+}
+
+.list li svg {
+    font-size: 1.4rem;
+    cursor: pointer;
+}
