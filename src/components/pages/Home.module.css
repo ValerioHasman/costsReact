@@ -19,4 +19,6 @@
 .home_container img{
     width: 80%;
     margin: 3em 0;
+    max-height: 450px;
+    max-width: 527px;
 }
