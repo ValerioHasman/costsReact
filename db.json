@@ -1,0 +1,39 @@
+{
+  "projetos": [
+    {
+      "id": 1
+    },
+    {
+      "id": 2
+    },
+    {
+      "categoria": {
+        "id": "1",
+        "nome": "Infra"
+      },
+      "orcamento": "2312312",
+      "nome": "sadasdasdasd",
+      "cost": 0,
+      "services": [],
+      "id": 3
+    }
+  ],
+  "categorias": [
+    {
+      "id": 1,
+      "nome": "Infra"
+    },
+    {
+      "id": 2,
+      "nome": "Dev"
+    },
+    {
+      "id": 3,
+      "nome": "Design"
+    },
+    {
+      "id": 4,
+      "nome": "Planejamento"
+    }
+  ]
+}
