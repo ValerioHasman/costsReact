@@ -1,0 +1,22 @@
+.mensagem {
+  width: 100%;
+  padding: 1em;
+  border: 1px solid black;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 2em;
+  border-radius: 5px;
+}
+
+.sucesso {
+  color: beige;
+  background-color: rgb(82, 131, 82);
+  border-color: rgb(104, 134, 104);
+}
+
+.erro {
+  color: red;
+  background-color: black;
+  border-color: black;
+}
+

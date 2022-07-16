@@ -23,7 +23,7 @@ function NovoProjeto() {
       .then((data) => {
         console.log(data)
         // redirecionamento
-        historico('/projetos', {message: 'Projeto criado'})
+        historico('/projetos', {state:{mensagem: 'Projeto criado'}})
       })
       .catch((err) => console.log(err))
 

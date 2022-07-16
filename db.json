@@ -16,6 +16,28 @@
       "cost": 0,
       "services": [],
       "id": 3
+    },
+    {
+      "nome": "we wh wg",
+      "orcamento": "213123",
+      "categoria": {
+        "id": "3",
+        "nome": "Design"
+      },
+      "cost": 0,
+      "services": [],
+      "id": 4
+    },
+    {
+      "nome": "jose",
+      "orcamento": "9",
+      "categoria": {
+        "id": "2",
+        "nome": "Dev"
+      },
+      "cost": 0,
+      "services": [],
+      "id": 5
     }
   ],
   "categorias": [
