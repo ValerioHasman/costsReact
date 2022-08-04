@@ -13,8 +13,8 @@ function Mensagem({ tipo, msg }) {
     setVisivel(true)
 
     const timer = setTimeout(() => {
-      //setVisivel(false)
-    }, 5000)
+      setVisivel(false)
+    }, 6000)
 
     return () => clearTimeout(timer)
 

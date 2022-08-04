@@ -1,6 +1,7 @@
 import { useLocation } from 'react-router-dom'
 import Mensagem from '../layout/Mensagem'
 import Conteiner from '../layout/Container'
+import Carregamento from '../layout/Carregamento'
 import LinkButton from '../pages/LinkButton'
 import ProjetoCartao from '../projeto/ProjetoCartao'
 
@@ -9,6 +10,8 @@ import { useEffect, useState } from 'react'
 
 function Projetos () {
   const [projetos, setProjetos] = useState([])
+  const [removeCarregar, setRemoveCarregar] = useState(false)
+  const [projetoMensagem, setProjetoMensagem] = useState('')
 
   const local = useLocation()
   let mensagem = ''
@@ -18,19 +21,37 @@ function Projetos () {
   }
 
   useEffect(() => {
-    fetch('http://localhost:5000/projetos',
-    {
-      method: 'GET',
+    setTimeout(() => {
+      fetch('http://localhost:5000/projetos',
+      {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      }).then(resp => resp.json())
+      .then(data => {
+        console.log(data)
+        setProjetos(data)
+        setRemoveCarregar(true)
+      })
+      .catch(err => console.log(err))
+    }, 1000);
+  }, [])
+
+  function removeProjeto(id){
+    fetch(
+      `http://localhost:5000/projetos/${id}`, {
+      method: 'DELETE',
       headers: {
-        'Content-Type': 'application/json',
-      }
+        'Content-Type': 'application/json'
+      },
     }).then(resp => resp.json())
     .then(data => {
-      console.log(data)
-      setProjetos(data)
+      setProjetos(projetos.filter((projeto) => projeto.id !== id))
+      setProjetoMensagem('Projeto removido com sucesso!')
     })
     .catch(err => console.log(err))
-  }, [])
+  }
 
   return (
     <div className={style.projeto_container}>
@@ -41,7 +62,13 @@ function Projetos () {
       {
         mensagem && <Mensagem msg={mensagem} tipo="sucesso" />
       }
+      {
+        projetoMensagem && <Mensagem msg={projetoMensagem} tipo="sucesso" />
+      }
       <Conteiner customClass="start">
+        {
+          !removeCarregar && <Carregamento />
+        }
         {
           projetos.length > 0 &&
           projetos.map((projetos) => (
@@ -51,9 +78,11 @@ function Projetos () {
               orcamento={projetos.orcamento}
               categoria={projetos.categoria.nome}
               key={projetos.id}
+              handleRemove={removeProjeto}
             />
           ))
         }
+
       </Conteiner>
     </div>
   )

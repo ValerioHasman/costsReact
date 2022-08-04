@@ -56,6 +56,8 @@
   margin-top: 1.2em;
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
+  min-width: 220px;
 }
 
 .acao_cartao_projetos a,

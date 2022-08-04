@@ -3,6 +3,12 @@ import style from './ProjetoCartao.module.css'
 import { BsPenFill, BsFillTrashFill} from 'react-icons/bs'
 
 function ProjetoCartao ({id, name, orcamento, categoria, handleRemove}) {
+
+  const remove = (e) => {
+    e.preventDefault()
+    handleRemove(id)
+  }
+
   return (
     <div className={style.cartao_projeto}>
       <h4>{name}</h4>
@@ -16,9 +22,9 @@ function ProjetoCartao ({id, name, orcamento, categoria, handleRemove}) {
         <Link to="/">
           <BsPenFill /> Editar
         </Link>
-        <Link to="/">
+        <button onClick={remove}>
           <BsFillTrashFill /> Excluir
-        </Link>
+        </button>
       </div>
     </div>
   )

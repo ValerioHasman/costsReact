@@ -7,7 +7,7 @@
 }
 
 .min-height {
-    min-height: 75%;
+    min-height: calc(100% - 54px - 114.39px);
 }
 
 .start {
