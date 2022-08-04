@@ -1,0 +1,83 @@
+.cartao_projeto {
+  padding: 1rem;
+  border: 1px solid #777;
+  border-radius: 5px;
+  width: auto;
+  margin: 0.5%;
+}
+
+.cartao_projeto h4 {
+  background-color: #777;
+  color: #fb3;
+  padding: 0.4em;
+  margin-bottom: 1.3em;
+  font-size: 1.3em;
+}
+
+.cartao_projeto p span {
+  color: #777;
+}
+
+.cartao_projeto p {
+  font-weight: bold;
+}
+
+.texto_categoria {
+  display: flex;
+  align-items: center;
+}
+
+.texto_categoria span {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ccc;
+  margin-right: 5px;
+}
+
+.texto_categoria .infra {
+  background-color: #ffaebc;
+}
+
+.texto_categoria .dev {
+  background-color: #a0e7e5;
+}
+
+.texto_categoria .design {
+  background-color: #b4f8c8;
+}
+
+.texto_categoria .plano {
+  background-color: #fbe7c6;
+}
+
+.acao_cartao_projetos {
+  margin-top: 1.2em;
+  display: flex;
+  align-items: center;
+}
+
+.acao_cartao_projetos a,
+.acao_cartao_projetos button {
+  text-decoration: none;
+  border: none;
+  background-color: #fff;
+  color: #222;
+  font-size: 0.9em;
+  padding: 0.6em 1em;
+  cursor: pointer;
+  border: 1px solid #222;
+  justify-content: center;
+  transition:  0.5s;
+}
+
+.acao_cartao_projetos svg {
+  margin-right: 0.5em;
+}
+
+.acao_cartao_projetos a:hover,
+.acao_cartao_projetos button:hover {
+  background-color: #222;
+  color: #fb3;
+}
