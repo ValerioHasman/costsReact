@@ -1,20 +1,20 @@
 .container {
-    width: 90%;
-    display: flex;
-    justify-content: space-between;
-    margin: 0 auto;
-    flex-wrap: wrap;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  flex-wrap: wrap;
 }
 
 .min-height {
-    min-height: calc(100% - 54px - 114.39px);
+  min-height: calc(100% - 54px - 114.39px);
 }
 
 .start {
-    justify-content: flex-start;
+  justify-content: flex-start;
 }
 
 .column {
-    flex-direction: column;
-    justify-content: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
 }

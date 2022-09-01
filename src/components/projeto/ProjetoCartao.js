@@ -19,7 +19,7 @@ function ProjetoCartao ({id, name, orcamento, categoria, handleRemove}) {
         <span className={`${style[categoria.toLowerCase()]}`}></span> {categoria}
       </p>
       <div className={style.acao_cartao_projetos}>
-        <Link to="/">
+        <Link to={`/projeto/${id}`}>
           <BsPenFill /> Editar
         </Link>
         <button onClick={remove}>
