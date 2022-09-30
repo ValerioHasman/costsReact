@@ -2,13 +2,43 @@
   "projetos": [
     {
       "nome": "Costs 2",
-      "orcamento": "2000",
+      "orcamento": "2998",
       "categoria": {
         "id": "2",
         "nome": "dev"
       },
-      "cost": 0,
-      "services": [],
+      "cost": null,
+      "services": [
+        {
+          "custo": "2222",
+          "id": "c0e801ca-4551-409c-9452-bc0cbfac95e5",
+          "nome": "sadasd",
+          "descricao": "asdasd"
+        },
+        {
+          "id": "fc0371cb-5dfe-40e6-b6d9-ca988bb3e9e8"
+        },
+        {
+          "id": "7376a1ec-2b12-482a-b1da-b9e75fee1b5d",
+          "custo": "222222222222222"
+        },
+        {
+          "id": "7376a1ec-2b12-482a-b1da-b9e75fee1b5d",
+          "custo": "222222222222222"
+        },
+        {
+          "id": "ecf1c54a-28be-4e4a-9743-3b88eb57c6d9",
+          "custo": "222222222222222323423432"
+        },
+        {
+          "id": "ecf1c54a-28be-4e4a-9743-3b88eb57c6d9",
+          "custo": "222222222222222323423432"
+        },
+        {
+          "id": "22b7b82e-1211-40bf-b9f6-adc4a7fabc45",
+          "custo": "222222222222222323423432"
+        }
+      ],
       "id": 1
     },
     {

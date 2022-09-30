@@ -19,7 +19,7 @@ function Mensagem({ tipo, msg }) {
     return () => clearTimeout(timer)
 
   }, [msg])
-
+  // sucesso - erro
   return (
     <>{
       visivel && (
