@@ -7,13 +7,15 @@ import Carregamento from '../layout/Carregamento';
 import Container from '../layout/Container';
 import ProjetoForm from '../projeto/ProjetoForm';
 import ServicoForm from '../servico/ServicoForm';
+import ServicoCartao from '../servico/ServicoCartao';
 import Mensagem from '../layout/Mensagem';
 
 function Projeto () {
 
   const { id } = useParams();
-  const [projeto, SetProjeto] = useState([]);
-  const [mostrarFormularioProjeto, SetMostrarFormularioProjeto] = useState(false);
+  const [projeto, setProjeto] = useState([]);
+  const [servicos, setServicos] = useState([]);
+  const [mostrarFormularioProjeto, setMostrarFormularioProjeto] = useState(false);
   const [mostrarFormularioServico, SetMostrarFormularioServico] = useState(false);
   const [mensagem, setMensagem] = useState();
   const [tipo, setTipo] = useState();
@@ -30,21 +32,30 @@ function Projeto () {
         },
       }).then(resp => resp.json())
       .then((data) => {
-        SetProjeto(data)
+        setProjeto(data)
+        setServicos(data.services)
       })
     }, 1000);
     
   }, [id])
 
+  function limpaMSG(){
+    setTimeout(() => {
+      setMensagem();
+    }, 6000)
+  }
+
   function criarServico(projeto) {
-    setMensagem();
-    const lastService = projeto.services[projeto.services.length - 1];
+
+    limpaMSG();
+
+    let lastService = projeto.services[projeto.services.length - 1];
 
     lastService.id = uuidv4();
 
-    const lastServceCost = lastService.custo;
+    let lastServceCost = lastService.custo;
 
-    const newCost = parseFloat(projeto.cost) + parseFloat(lastServceCost);
+    let newCost = parseFloat(projeto.cost) + parseFloat(lastServceCost);
 
 
     if(newCost > parseFloat(projeto.orcamento)){
@@ -67,20 +78,22 @@ function Projeto () {
     ).then(
       (data) => {
         //exibir
-        console.log(data);
+        SetMostrarFormularioServico();
       }
     ).catch(err => console.log(err))
   }
 
   function alternarFormularioProjeto(){
-    SetMostrarFormularioProjeto(!mostrarFormularioProjeto);
+    setMostrarFormularioProjeto(!mostrarFormularioProjeto);
   }
   function alternarFormularioServico(){
     SetMostrarFormularioServico(!mostrarFormularioServico);
   }
 
   function editarPost(projeto){
-    setMensagem();
+    
+    limpaMSG();
+
     if(projeto.orcamento < projeto.cost){
       setMensagem('O orçamento não pode ser menor que o custo do projeto');
       setTipo('erro');
@@ -98,8 +111,8 @@ function Projeto () {
     })
     .then((resp) => resp.json())
     .then((data) => {
-      SetProjeto(data);
-      SetMostrarFormularioProjeto(false);
+      setProjeto(data);
+      setMostrarFormularioProjeto(false);
       setMensagem('Projeto Atualizado!');
       setTipo('sucesso');
     })
@@ -110,7 +123,10 @@ function Projeto () {
   {projeto.nome ? (
   <div className={style.projeto_detalhe}>
     <Container customClass="column">
-      {mensagem && <Mensagem tipo={tipo} msg={mensagem}/>}
+      {mensagem && <Mensagem
+        tipo={tipo}
+        msg={mensagem}
+      />}
       <div className={style.container_detalhe}>
         <h1>Projetos: {projeto.nome}</h1>
         <button
@@ -123,7 +139,7 @@ function Projeto () {
           <div className={style.projeto_info}>
             <p><span>Categoria:</span> {projeto.categoria.nome}</p>
             <p><span>Total de Orçamento:</span> {projeto.orcamento}</p>
-            <p><span>Total utilizado:</span> {projeto.cost}</p>
+            <p><span>Total utilizado:</span> R$ {projeto.cost}</p>
           </div>
         ) : (
           <div className={style.projeto_info}>
@@ -150,7 +166,17 @@ function Projeto () {
       </div>
       <h2>Serviços</h2>
       <Container customClass='start'>
-        <p>Itens de Serviços</p>
+        {servicos.length > 0 && 
+          servicos.map((servico) => (
+            <ServicoCartao
+             id={servico.id}
+             nome={servico.nome}
+             descricao={servico.descricao}
+             custo={servico.custo}
+            />
+          ))
+        }
+        {servicos.length === 0 && <p>Não há serviços cadastrados </p>}
       </Container>
     </Container>
   </div>) : (<Carregamento />)}

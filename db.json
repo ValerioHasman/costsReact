@@ -7,36 +7,31 @@
         "id": "2",
         "nome": "dev"
       },
-      "cost": null,
+      "cost": 1188,
       "services": [
         {
-          "custo": "2222",
-          "id": "c0e801ca-4551-409c-9452-bc0cbfac95e5",
-          "nome": "sadasd",
-          "descricao": "asdasd"
+          "nome": "Costs 2.0",
+          "custo": "200",
+          "descricao": "nedas",
+          "id": "7ab07fad-827b-4086-9fe1-f631bbe15071"
         },
         {
-          "id": "fc0371cb-5dfe-40e6-b6d9-ca988bb3e9e8"
+          "nome": "sib",
+          "custo": "344",
+          "descricao": "Site de regencia",
+          "id": "4e5ae37c-0119-4cf6-9bc9-13cf6c9b9390"
         },
         {
-          "id": "7376a1ec-2b12-482a-b1da-b9e75fee1b5d",
-          "custo": "222222222222222"
+          "nome": "ads",
+          "custo": "222",
+          "descricao": "qweqwe",
+          "id": "5929cd8c-4b32-4db6-93ff-858f2196b605"
         },
         {
-          "id": "7376a1ec-2b12-482a-b1da-b9e75fee1b5d",
-          "custo": "222222222222222"
-        },
-        {
-          "id": "ecf1c54a-28be-4e4a-9743-3b88eb57c6d9",
-          "custo": "222222222222222323423432"
-        },
-        {
-          "id": "ecf1c54a-28be-4e4a-9743-3b88eb57c6d9",
-          "custo": "222222222222222323423432"
-        },
-        {
-          "id": "22b7b82e-1211-40bf-b9f6-adc4a7fabc45",
-          "custo": "222222222222222323423432"
+          "custo": "222",
+          "id": "7f89687b-c369-4d47-ae0d-2f9882a56cd3",
+          "nome": "eqweqweqwe",
+          "descricao": "qweqweqe"
         }
       ],
       "id": 1
@@ -48,7 +43,7 @@
         "id": "3",
         "nome": "design"
       },
-      "cost": 0,
+      "cost": 100,
       "services": [],
       "id": 2
     }
